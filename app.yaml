@@ -1,0 +1,9 @@
+runtime: java21
+instance_class: F1
+
+env_variables:
+  JAVA_TOOL_OPTIONS: "-XX:+UseContainerSupport"
+
+handlers:
+  - url: /.*
+    script: auto

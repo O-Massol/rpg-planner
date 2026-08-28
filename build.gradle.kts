@@ -15,6 +15,14 @@ application {
 kotlin {
     jvmToolchain(21)
 }
+
+tasks.shadowJar {
+    archiveClassifier.set("")
+    manifest {
+        attributes["Main-Class"] = "io.ktor.server.netty.EngineMain"
+    }
+}
+
 dependencies {
     implementation(ktorLibs.server.config.yaml)
     implementation(ktorLibs.server.core)
